@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+    <link rel="stylesheet" href="./mobile.css">
+    <link rel="stylesheet" href="./tablet.css">
+    <link rel="stylesheet" href="./pc.css">
+</head>
+<style>
+    @font-face {
+        font-family: myFont;
+        src: url(HKGrotesk-Bold.ttf);
+    }
+    @media (max-width: 9px) and (min-width: 7px) {
+    .First_cotainer {
+        background-color: white;
+        width: 98%;
+        border: 12px solid darkgray;
+        border-right: 12px solid darkgray;
+        border-top: 0px;
+        height: auto;
+    }
+    .content {
+        display: flex;
+    }
+    .txt {
+        text-align: center;
+        font-family: myFont;
+        width: 30%;
+        margin-left: 8%;
+    }
+    .line {
+        font-size: 25px;
+        color: darkred;
+        font-weight: bold;
+    }
+    .num {
+        font-weight: bold;
+        font-size: 45px;
+        margin-top: -25px;
+        color: #4a4a4a;
+    }
+    .h3 {
+        font-weight: bold;
+        font-size: 20.5px;
+        margin-top: -40px;
+        color: #4a4a4a;
+    }
+    img {
+        width: 60%;
+        height: auto;
+    }
+    /* Navbar styles */
+    .navbar {
+        background-color: #7c0e0d;
+        display: flex;
+        font-family: myFont;
+        justify-content: space-between;
+        padding-left: 42%;
+        padding-right: 2.8%;
+        cursor: pointer;
+        color: white;
+        font-size: 20px;
+    }
+    .click {
+        padding: 0px;
+    }
+    .click:hover {
+        background-color: gray;
+    }
+    /* Image containers */
+    .container {
+        display: flex;
+        width: 98%;
+        height: 487px;
+        margin-top: -15px;
+        margin-left: 15px;
+        margin-right: 10px;
+        justify-content: space-between;
+    }
+    .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 54%;
+    }
+    .image img {
+        width: 99%;
+        margin-top: -55px;
+        height: 487px;
+        margin-right: 24px;
+        margin: 12px;
+    }
+    .image2 {
+        margin-top: -55px;
+        margin: 12px;
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+        background-image: url('images/form_bg.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 487px;
+    }
+    .h1 {
+        background-color: brown;
+        width: 182px;
+        height: 48px;
+        margin-top: 0px;
+        font-family: serif;
+        font-size: 40px;
+        color: white;
+        line-height: 48px;
+    }
+    .p1 {
+        padding: 10px;
+        font-size: 18px;
+        margin-left: 37%;
+        font-family: myFont;
+        font-size: 25px;
+        margin-top: -66px;
+    }
+    .h2Ques {
+        font-family: myFont;
+        font-size: 30px;
+        /* background-color: red; */
+        color: darkcyan;
+        margin-top: 15px;
+        margin-left: 23%;
+        position: absolute;
+        border-radius: 3px solid #4a4a4a;
+    }
+    .h3about {
+        font-family: myFont;
+        font-size: 25px;
+        margin-left: 39%;
+        color: #4a4a4a;
+        margin-top: -20px;
+    }
+    .Enter {
+        margin: -15px 0px 0px 15px;
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: normal;
+        color: #4a4a4a;
+    }
+    .new {
+        margin-left: 23.5%;
+        margin-top: -6%;
+        transform: rotate(370deg);
+        position: absolute;
+        overflow: hidden;
+        padding-right: 0px;
+    }
+    .new img {
+        width: 200px;
+        height: auto;
+    }
+    .input {
+        font-size: 18px;
+        margin-top: 15px;
+        margin-left: 30px;
+        font-family: myFont;
+        color: #4a4a4a;
+    }
+    .area {
+        width: 200px;
+        height: 20px;
+        margin-left: 10px;
+        margin-top: 1px;
+        color: #4a4a4a;
+    }
+    .area2 {
+        width: 200px;
+        height: 20px;
+        margin-left: 8.5px;
+        margin-top: 12px;
+        color: #4a4a4a;
+    }
+    .area3 {
+        width: 200px;
+        height: 20px;
+        margin-left: 2px;
+        margin-top: 12px;
+        color: #4a4a4a;
+    }
+    .area_msg {
+        width: 90%;
+        height: 40%;
+        text-align: left;
+        margin-top: 16px;
+        color: #4a4a4a;
+    }
+    ::placeholder {
+        position: absolute;
+        font-family: myFont;
+        color: #4a4a4a;
+        font-size: 18px;
+        font-weight: bold;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        text-align: left;
+        vertical-align: text-top;
+        padding: 0;
+    }
+    .ask {
+        width: 99%;
+        margin-top: 6px;
+        height: 30%;
+        display: flex;
+        align-items: center;
+        color: #4a4a4a;
+    }
+    .Privacy {
+        font-family: sans-serif;
+        color: darkgray;
+        font-weight: lighter;
+        margin-left: -9px;
+        font-size: 12px;
+        color: #4a4a4a;
+    }
+    .Case {
+        margin-left: 4px;
+        background-color: rgb(189, 4, 12, 255);
+        width: 350px;
+        height: 45px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        color: white;
+    }
+    /* ________________________________________________________________________________________________________________________________________________ */
+    /* three line concept  usinsg grid*/
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 40% 1fr;
+    }
+    .one {
+        /* background-color: #2596be; */
+        width: 100%;
+        height: 380px;
+        padding: 15px;
+        padding-top: 0px;
+        margin-top: -24px;
+    }
+    .h_1 {
+        font-family: myFont;
+        font-size: 25px;
+        color: #4a4a4a;
+    }
+    .h0 {
+        font-family: myFont;
+        font-size: 16px;
+        margin-top: -15px;
+        color: #752829;
+        font-weight: bolder;
+        color: #4a4a4a;
+    }
+    .p2 {
+        font-family: myFont;
+        font-size: 15px;
+        margin-top: -5px;
+        color: #4a4a4a;
+    }
+    .p3 {
+        font-family: myFont;
+        font-size: 15px;
+        margin-top: -5px;
+        color: #4a4a4a;
+    }
+    .img_src {
+        width: 110px;
+        margin-left: 205px;
+        margin-top: -130px;
+    }
+    /* Center the button in its container */
+    .container {
+        display: flex;
+        justify-content: center;
+        /* Centers horizontally */
+        align-items: center;
+        /* Centers vertically */
+        height: 100vh;
+        /* Full viewport height */
+    }
+    /* Styling for the button */
+    .btn {
+        background-color: #be0409;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        /* Centers content inside the button horizontally */
+        align-items: center;
+        /* Centers content inside the button vertically */
+        text-align: center;
+        font-family: myFont;
+        width: 140px;
+        height: 40px;
+        margin-top: -9px;
+        margin-left: 38%;
+    }
+    /* Image inside the button */
+    .img_png {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        padding-left: 6px;
+        width: 15px;
+    }
+    .hr {
+        width: 280px;
+        margin-top: 44px;
+        margin-left: 17%;
+    }
+    /* ONE IS COMPLETE NOW  */
+    .second {
+        /* background-color: #0c23bc; */
+        height: 395px;
+        margin-top: -24px;
+    }
+    .h_s {
+        /* background-color: yellow; */
+        font-family: myFont;
+        padding-left: 12px;
+        color: #4a4a4a;
+    }
+    .p_s {
+        font-family: myFont;
+        margin-top: -12px;
+        padding-left: 12px;
+        color: #4a4a4a;
+    }
+    .hr1 {
+        width: 280px;
+        margin-left: 3%;
+    }
+    .btn1 {
+        background-color: #be0409;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        /* Centers content inside the button horizontally */
+        align-items: center;
+        /* Centers content inside the button vertically */
+        text-align: center;
+        font-family: myFont;
+        width: 140px;
+        height: 40px;
+        margin-top: -9px;
+        margin-left: 10%;
+    }
+    .img_png1 {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        padding-left: 6px;
+        width: 15px;
+    }
+    .border_ {
+        border: 1px solid lightgray;
+        border-top: 0px;
+    }
+    .border_1 {
+        border: 1px solid lightgrey;
+        border-bottom: 0px;
+        border-top: 0px;
+        margin-top: 35px;
+    }
+    .C {
+        color: #752829;
+    }
+    .e {
+        color: #752829;
+        font-family: myFont;
+    }
+    .img_ {
+        width: 333px;
+        margin-top: -140px;
+        margin-left: 60%;
+    }
+    .img_3 {
+        width: 333px;
+        margin-top: -110px;
+        margin-left: 60%;
+    }
+    /* second is complete*/
+    .thired {
+        /* background-color: #ff652e; */
+        width: 100%;
+        height: 395px;
+        margin-top: -24px;
+    }
+    .img_4 {
+        width: 200px;
+        margin-top: 12PX;
+        margin-left: 38px;
+    }
+    .img_5 {
+        width: 180px;
+        margin-top: -112px;
+        margin-left: 48%;
+    }
+    .h_three {
+        margin-left: 15px;
+        margin-top: -5px;
+        font-family: myFont;
+        color: #4a4a4a;
+        font-size: 25px;
+    }
+    .el {
+        color: #752829;
+        margin-top: -6px;
+    }
+    .p_three {
+        margin-left: 15px;
+        font-family: myFont;
+        margin-top: -20px;
+        color: #4a4a4a;
+    }
+    .hr_three {
+        width: 200px;
+        margin-left: 95px;
+    }
+    .btn_three {
+        background-color: #be0409;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        /* Centers content inside the button horizontally */
+        align-items: center;
+        /* Centers content inside the button vertically */
+        text-align: center;
+        font-family: myFont;
+        width: 140px;
+        height: 40px;
+        margin-top: -9px;
+        margin-left: 36%;
+    }
+    .shadow_hr {
+        margin-left: 30%;
+    }
+    /* Thired phase is compeleted */
+    .fourth {
+        display: grid;
+        grid-template-columns: 1fr 40% 1fr;
+    }
+    .first {
+        /* background-color: #0c23bc; */
+        width: 100%;
+        height: 1150px;
+        color: #4a4a4a;
+    }
+    .h1_four {
+        font-family: myFont;
+        margin-left: 12px;
+        color: #4a4a4a;
+    }
+    .box_img {
+        background-color: #801714;
+        margin-top: -78px;
+        width: 12px;
+        height: 65px;
+    }
+    .box {
+        background-color: #838383;
+        width: 300px;
+        color: white;
+        height: 65px;
+        padding-left: 0px;
+        margin-left: 6%;
+    }
+    .h1_four {
+        font-family: myFont;
+        margin-left: 24px;
+        font-size: 25px;
+        color: #4a4a4a;
+    }
+    .p_four {
+        font-family: myFont;
+        margin-left: 50%;
+        margin-top: -4px;
+        position: relative;
+        color: #4a4a4a;
+    }
+    .play_btn {
+        width: 20px;
+        margin-left: 2px;
+        margin-top: -2px;
+        position: absolute;
+        height: auto;
+    }
+    .r {
+        color: #4a4a4a;
+    }
+    .hu {
+        text-align: center;
+    }
+    .menu_bar {
+        text-align: center;
+        font-size: 30px;
+        color: #d0d0d0;
+        font-family: myFont;
+    }
+    .two {
+        /* background-color: #ff652e; */
+        height: 1150px;
+        color: #4a4a4a;
+    }
+    .h1_two {
+        font-family: myfont;
+        color: #4a4a4a;
+    }
+    .p_two {
+        text-align: left;
+        font-family: myFont;
+        color: #4a4a4a;
+    }
+    .three {
+        /* background-color: #2596be; */
+    }
+    .h1_3 {
+        font-family: myFont;
+        margin-left: 12px;
+    }
+    .p_3 {
+        font-family: myFont;
+        margin-left: 15px;
+        margin-top: -20px;
+    }
+    .btn_1 {
+        background-color: #be0409;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        /* Centers content inside the button horizontally */
+        align-items: center;
+        /* Centers content inside the button vertically */
+        text-align: center;
+        font-family: myFont;
+        width: 140px;
+        height: 40px;
+        margin-top: -9px;
+        margin-left: 17%;
+    }
+    .award {
+        width: 200px;
+        margin-top: 10%;
+        text-align: center;
+        margin-left: 17%;
+    }
+    .DUI {
+        width: 200px;
+        text-align: center;
+        margin-left: 17%;
+        margin-top: 30px;
+    }
+    .hr_5 {
+        width: 250px;
+        margin-left: 18px
+    }
+    .btn_5 {
+        background-color: #be0409;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        /* Centers content inside the button horizontally */
+        align-items: center;
+        /* Centers content inside the button vertically */
+        text-align: center;
+        font-family: myFont;
+        width: 140px;
+        height: 40px;
+        margin-top: -9px;
+        margin-left: 25%;
+    }
+    .head {
+        font-size: 25px;
+        margin-left: 26%;
+        font-family: myFont;
+    }
+    .lines {
+        margin-top: -25px;
+        margin-left: 70px;
+    }
+    .facebook {
+        width: 50px;
+        display: flex;
+        margin-left: 24%;
+    }
+    .google {
+        margin-left: 12px;
+    }
+    .twitter {
+        margin-left: 12px;
+    }
+    .in {
+        margin-left: 12px;
+    }
+    .back {
+        width: 100%;
+        height: 15px;
+        background-color: #be0409;
+    }
+}
+</style>
+<body>
+    <div class="First_cotainer">
+        <div class="content">
+            <img src="images/logo.png" alt="Logo" class="first_img">
+            <div class="txt">
+                <h2 class="line"><u>CALL OUR OFFICE NOW!</u></h2>
+                <H1 class="num">540.433.6906</H1>
+                <h3 class="h3">Get Your Question Answer Fast</h3>
+            </div>
+        </div>
+        <!-- Navbar -->
+        <div class="navbar">
+            <ul class="click">HOME</ul>
+            <ul class="click">BIOGRAPHY</ul>
+            <ul class="click">BLOG</ul>
+            <ul class="click">AREAS WE SERVE</ul>
+            <ul class="click">LIBRARY</ul>
+            <ul class="click">CONTACT</ul>
+        </div>
+        <!-- Container with two images -->
+        <div class="container">
+            <div class="image">
+                <img src="images/gurantee_banner.gif" alt="">
+            </div>
+            <div class="image2">
+                <h1 class="h1">Question?</h1>
+                <p class="p1">Have a </p>
+                <h2 class="h2Ques">Question</h2>
+                <h3 class="h3about">About Your Case?</h3>
+                <p class="Enter">Enter your information and get your question answered <br>
+                    quickly and discreetly or call us at:<b> 540.433.6906</b>
+                </p>
+                <div class="input">
+                    <label for="text">NAME: <input type="text" class="area"></label> <br>
+                    <label for="text">EMAIL: <input type="text" class="area2"></label> <br>
+                    <label for="text">PHONE: <input type="text" class="area3"></label>
+                    <div class="new"><img src="images\confidential.png" alt=""></div>
+                    <br>
+                    <textarea name="" id="" placeholder="Tell us about your case here..."
+                        class="area_msg"></textarea><br>
+                    <div class="ask">
+                        <p class="Privacy"><i>100% Privacy Guaranteed</i></p>
+                        <h3 class="Case">Ask Us About Your Case </h3><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- second phase is complete now -->
+        <div class="grid">
+            <div class="one">
+                <h2 class="h_1">
+                    CHARGED WITH <e class="e">DUI?
+                </h2>
+                <H3 class="h0">FREE CASE EVALUATION</H3>
+                <P class="p2">Being changed with a DUI <br> can be. Get the help <br>you deserve.</P>
+                <p class="p3">Click here to let us know <br> how we can help you with <br> your case.</p>
+                <div class="img_src"><img src="images\paste_board.gif" alt=""></div>
+                <div class="hr">
+                    <hr>
+                </div>
+                <button class="btn">CLICK HERE <img src="play-button.png" alt="" class="img_png"></button>
+            </div>
+            <div class="second">
+                <div class="border_">
+                    <h2 class="h_s">
+                        LAW <e class="C">BLOG</h2>
+                    </h2>
+                    <p class="p_s">Learn more about <br> Virinia Traffic Laws</p>
+                    <div class="hr1">
+                        <hr>
+                    </div>
+                    <button class="btn1">CLICK HERE <img src="play-button.png" alt="" class="img_png"></button>
+                </div>
+                <div class="img_"><img src="images\pic1.gif" alt=""></div>
+                <div class="border_1">
+                    <h2 class="h_s">
+                        CASE RESULT
+                    </h2>
+                    <p class="p_s">See how we help our client. <br> Read our lateslt Case results.</p>
+                    <div class="hr1">
+                        <hr>
+                    </div>
+                    <button class="btn1">CLICK HERE <img src="play-button.png" alt="" class="img_png"></button>
+                </div>
+                <div class="img_3"><img src="images\order_icon.gif" alt=""></div>
+            </div>
+            <div class="thired">
+                <div class="img_4"><img src="images\avo_rating_large.gif" alt=""></div>
+                <div class="img_5"><img src="images\national_college_large.gif" alt=""></div>
+                <h1 class="h_three">
+                    CERTIFCATES & <br>
+                    <e class="el">CREADENTIALS
+                </h1>
+                <p class="p_three">Keefer Law Firm has protected the <br> rights of virginians of over 30 years.</p>
+                <div class="hr_three">
+                    <hr>
+                </div>
+                <button class="btn_three">CLICK HERE <img src="play-button.png" alt="" class="img_png"></button>
+            </div>
+        </div>
+        <div class="shadow_hr"><img src="images\hr_shadow.png" alt="" width="100%"></div>
+        <div class="fourth">
+            <div class="first">
+                <h1 class="h1_four">PARTICE <e class="e">AREAS</h1>
+                <div class="box">
+                    <H1 class="h1_four">DUI & DWI</H1>
+                    <p class="p_four">LEARN MORE <img src="play-button-arrowhead.png" alt="" class="play_btn"></p>
+                    <div class="box_img"></div>
+                </div>
+                <div class="box">
+                    <H1 class="h1_four">ROCKLESS DRIVING</H1>
+                    <p class="p_four">LEARN MORE <img src="play-button-arrowhead.png" alt="" class="play_btn"></p>
+                    <div class="box_img"></div>
+                </div>
+                <div class="box">
+                    <H1 class="h1_four">SPEEDING TICKET</H1>
+                    <p class="p_four">LEARN MORE <img src="play-button-arrowhead.png" alt="" class="play_btn"></p>
+                    <div class="box_img"></div>
+                </div>
+                <div class="box">
+                    <H1 class="h1_four">TARAFFIC VIOLATIONS</H1>
+                    <p class="p_four">LEARN MORE <img src="play-button-arrowhead.png" alt="" class="play_btn"></p>
+                    <div class="box_img"></div>
+                </div>
+                <h1 class="hu">LEARN <e class="e">
+                        MORE <r class="r"> ABOUT
+                </h1>
+                <br><br>
+                <p class="menu_bar">
+                    MENU<br>
+                    AREA<br>
+                    HERE
+                </p>
+            </div>
+            <div class="two">
+                <h1 class="h1_two">&lt;H1&gt;PAGE TITLE HERE</h1>
+                <p class="p_two">Asunt in anim uis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                    dolore eu fugiat
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in anim id est laborum. Allamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Aser velit esse cillum dolore eu fugiat nulla
+                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in anim id est laborum. Asunt in anim
+                    uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in anim id est laborum. Allamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Aser velit esse cillum dolore eu fugiat nulla
+                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in anim id est laborum.</p>
+            </div>
+            <div class="three">
+                <h1 class="h1_3">CLIENT <br>
+                    <e class="e">TESTTIMOIALS
+                </h1>
+                <p class="p_3">Read what others say <br> about keefer Law Firm.</p>
+                <div class="hr_5">
+                    <hr>
+                </div>
+                <button class="btn_5">CLICK HERE <img src="play-button.png" alt="" class="img_png"></button>
+                <h1 class="h1_3">DOWNLOAD <br>
+                    <e class="e">FREE</e> OFFICES
+                </h1>
+                <p class="p_3">Read what others say <br> about keefer Law Firm.</p>
+                <div class="hr_5">
+                    <hr>
+                </div>
+                <button class="btn_5">CLICK HERE <img src="play-button.png" alt="" class="img_png"></button>
+                <h1 class="h1_3">CONTACT <e class="e">OUR <br>
+                        <r class="r">OFFICES</h1>
+                <p class="p_3">Read what others say <br> about keefer Law Firm.</p>
+                <div class="hr_5">
+                    <hr>
+                </div>
+                <button class="btn_5">CLICK HERE <img src="play-button.png" alt="" class="img_png"></button>
+                <div class="award"><img src="images\avo_rating_large.gif" alt=""></div>
+                <div class="DUI"><img src="images\national_college_large.gif" alt=""></div>
+                <h2 class="head">FOLLOW <e class="e">US</h2>
+                <div class="lines"><img src="images\lf_bt_hr_shadow.png" alt=""></div>
+                <div class="logos">
+                    <div class="facebook"><img src="images\fb_icon.gif" alt="">
+                        <img src="images\google_icon.gif" alt="" class="google">
+                        <img src="images\twitter_icon.gif" alt="" class="twitter">
+                        <img src="images\linked_icon.gif" alt="" class="in">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="back">
+        </div>
+    </div>
+    </div>
+</body>
+</html>
